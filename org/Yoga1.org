@@ -1,0 +1,24 @@
+#+TITLE:     Yoga1 Track List
+#+TEXT:      The table of track information for the first Yoga mix ...
+
+| @<b>Track No.@</b> | @<b>Artist@</b>              | @<b>Title@</b>        | @<b>Time@</b> | @<b>Album@</b>                        | @<b>Album Track No.@</b> |
+|                 01 | Ray Lynch                    | Falling In The Garden |       2:46:73 | Deep Breakfast                        |                       03 |
+|                 02 | Suzanne Ciani                | Anthem                |       4:00:47 | Pianissimo                            |                       01 |
+|                 03 | Trevor Jones & Randy Edelman | Main Title            |       1:44:32 | The Last of the Mohicans (Soundtrack) |                       01 |
+|                 04 | Christopher Young            | Shipping News         |       4:06:22 | Shipping News (Soundtrack)            |                       01 |
+|                 05 | Suzanne Ciani                | She Said Yes          |       3:59:50 | Pianissimo                            |                       09 |
+|                 06 | Liz Story                    | Reconciliation        |       4:24:72 | Part of Fortune                       |                       06 |
+|                 07 | Suzanne Ciani                | Neverland             |       3:57:05 | Pianissimo                            |                       03 |
+|                 08 | Ray Lynch                    | Kathleen's Song       |       4:10:20 | Deep Breakfast                        |                       06 |
+|                 09 | Trevor Jones & Randy Edelman | Promentory            |       6:13:12 | The Last of the Mohicans (Soundtrack) |                       06 |
+|                 10 | Liz Story                    | The Elephant Trainer  |       5:05:47 | Part of Fortune                       |                       05 |
+|                 11 | Suzanne Ciani                | Aegean Wave           |       3:20:27 | Pianissimo                            |                       05 |
+|                 12 | Trevor Jones & Randy Edelman | The Kiss              |       2:49:05 | The Last of the Mohicans (Soundtrack) |                       03 |
+|                 13 | Kitaro                       | Dreams Like Yesterday |       5:12:15 | Silver Cloud                          |                       03 |
+|                 14 | Suzanne Ciani                | Drifting              |       4:19:72 | Pianissimo                            |                       10 |
+|                 15 | Ray Lynch                    | Pastorale             |       5:31:18 | Deep Breakfast                        |                       07 |
+|                 16 | Suzanne Ciani                | Mozart                |       3:17:13 | Pianissimo                            |                       12 |
+|                 17 | Christopher Young            | Sail On               |       6:14:43 | Shipping News (Soundtrack)            |                       16 |
+|                 18 | Suzanne Ciani                | When Love Dies        |       3:54:27 | Pianissimo                            |                       13 |
+|                    |                              |                       |      75:08:00 |                                       |                          |
+
