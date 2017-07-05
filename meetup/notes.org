@@ -1,0 +1,9 @@
+* July 2017 Org Mode Tips and Tricks
+** Intro
+This is not an introduction to org mode, simply some cool things one can do with Org Mode out of the norm, including modeling a keyboard, operating a text based
+simple spreadsheet, publishing and doing a presentation.
+** outlining
+** tables
+** mac-keyboard.org
+** publishing
+** doing a presentation

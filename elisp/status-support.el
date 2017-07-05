@@ -1,0 +1,42 @@
+(defun total (name data-list)
+  (print "Processing totals...")
+  (let ((time 0)
+        (count (/ (length data-list) 3))
+        base begin end cat second-beg seconds-end diff)
+    (dotimes (index count time)
+      (setq base (* index 3)
+            begin (nth base data-list)
+            end (nth (1+ base) data-list)
+            cat (nth (+ 2 base) data-list))
+      (if (string= name cat)
+          (setq seconds-beg (org-time-string-to-seconds begin)
+                seconds-end (org-time-string-to-seconds end)
+                diff (- seconds-end seconds-beg)
+                time (+ time diff))))
+    (org-time-seconds-to-string time)))
+
+(total "SLEEP" data)
+
+(defun org-time-string-to-seconds (s)
+     "Convert a string HH:MM:SS to a number of seconds."
+     (cond
+      ((and (stringp s)
+            (string-match "\\([0-9]+\\):\\([0-9]+\\):\\([0-9]+\\)" s))
+       (let ((hour (string-to-number (match-string 1 s)))
+             (min (string-to-number (match-string 2 s)))
+             (sec (string-to-number (match-string 3 s))))
+         (+ (* hour 3600) (* min 60) sec)))
+      ((and (stringp s)
+            (string-match "\\([0-9]+\\):\\([0-9]+\\)" s))
+       (let ((min (string-to-number (match-string 1 s)))
+             (sec (string-to-number (match-string 2 s))))
+         (+ (* min 60) sec)))
+      ((stringp s) (string-to-number s))
+      (t s)))
+
+   (defun org-time-seconds-to-string (secs)
+     "Convert a number of seconds to a time string."
+     (cond ((>= secs 3600) (format-seconds "%h:%.2m:%.2s" secs))
+           ((>= secs 60) (format-seconds "%m:%.2s" secs))
+           (t (format-seconds "%s" secs))))
+

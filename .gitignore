@@ -9,3 +9,8 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# Other
+ergoemacs/
+elisp/projects/
+org/personal/

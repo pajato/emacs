@@ -1,0 +1,6 @@
+#+TITLE: Pajatome: Notes, Stories and Other Communications
+
+   + [[file:Yoga1.org][Yoga1 Track List]]
+   + [[file:engineering-notebook.org][Engineering Notebook --- Pajato Systems Group and Personal]]
+   + [[file:folders.org][Personal Address Book and Folder Index]]
+   + [[file:todo.org][todo]]

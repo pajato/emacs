@@ -1,0 +1,4 @@
+;; Load the main start up code
+
+;; This file only runs in an Emacs version which does not support
+;; loading ~/.emacs.el first, if it exists.

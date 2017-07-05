@@ -1,0 +1,10 @@
+(let ((path default-directory)
+      file)
+  (setq file (format "%s/.dir-locals.el" path))
+  (with-temp-buffer
+    (insert (format "((nil . ((indent-tabs-mode . t)
+          (my-project-path \"%s\"))))" path))
+    (when (file-writable-p file)
+      (write-region (point-min)
+                    (point-max)
+                    file))))
