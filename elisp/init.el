@@ -18,7 +18,7 @@
 (require 'gradle-support)
 (require 'java-support)
 (require 'keyboard-support)
-(require 'kotlin-support)
+;;(require 'kotlin-support)
 (require 'maven-support)
 (require 'navigation-support)
 (require 'net-utils-support)
@@ -33,7 +33,7 @@
 (add-to-list 'default-frame-alist '(cursor-color . "#be369c"))
 (blink-cursor-mode)
 
-(set-frame-parameter nil 'fullscreen (when (not (frame-parameter nil 'fullscreen)) 'fullboth))
+;;(set-frame-parameter nil 'fullscreen (when (not (frame-parameter nil 'fullscreen)) 'fullboth))
 (dired "~/Projects")
 
 (setq magit-last-seen-setup-instructions "1.4.0")
