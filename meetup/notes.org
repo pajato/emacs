@@ -5,13 +5,13 @@
 
 - Not an Org Mode intro
 - Just some cool tips and tricks, like:
-- presenting slides from Emacs
-- formatting source code
-- showing tex/latex snippets
-- modeling bindings on a mac keyboard
-- text based tables
-- simple spreadsheet
-- publishing out of Emacs
+- using live external links (OM feature)
+- presenting slides from Emacs (contributed library)
+- formatting source code (OM feature)
+- showing tex/latex snippets (TeX/LateX OM feature)
+- text based tables (OM feature)
+- simple spreadsheet (OM feature)
+- publishing out of Emacs (OM feature
 
 * Presenting from Emacs
   :PROPERTIES:
@@ -19,8 +19,8 @@
   :END:
 # a comment, which will not be displayed
 
-Simple presentations run by Emacs
-- run in Emacs
+Simple Emacs based presentations
+- run entirely in Emacs usng [[https://github.com/eschulte/epresent][EPresent]] (via ELPA)
 - uses Org-mode markup
 - looks pretty good
 - simple navigation using:
@@ -30,12 +30,13 @@ Simple presentations run by Emacs
 - "q" for quit.
 ** with subheadings
 and some other stuff
-
+** is missing
+Annotations
 * Formatting Source Code
 
-Calling =epresent-run= presents an Org-mode buffer.
-
-Here's the code:
+*EPresent* is an Emacs library sourced on Github with more than one
+fork. Here's the main code found in Eric Schulte's fork, nicely
+formatted for an Emacs Lisp audience:
 
 #+begin_src emacs-lisp
   ;;;###autoload
@@ -48,7 +49,6 @@ Here's the code:
     (epresent-mode)
     (epresent-top))
 #+end_src
-
 * Showing TeX/LaTeX snippets
 
 Kinetic Energy:
@@ -88,146 +88,9 @@ TIP #1:  Think in outline mode; start with one line and then add details/organiz
 | data in col1 | more stuff in col2 | last stuff |
 
 
-* Modeling key bindings for a Mac keyboard
-#+TITLE:     Mac Ergonomic Keyboard Layout for Emacs
-#+LANGUAGE:  en
-#+OPTIONS:   H:4 num:nil toc:nil \n:nil @:nil ::t |:t ^:t -:t f:t *:t TeX:t LaTeX:nil skip:nil d:t tags:not-in-toc author:nil email:nil timestamp:nil creator:nil
-#+INFOJS_OPT: view:nil toc:t ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
-#+STARTUP: align
-#+BEGIN_SRC emacs-lisp
-#+END_SRC
-Support for rebinding keys based on the work that Xah Lee and friends did for Ergo Emacs: http://ergoemacs.github.io/
-
-NOTE: This work is mainly done to make Emacs keyboarding productive and ergonomic when using Apple keyboards
-
-|------+---------------+---------------+----------+------------------------------------|
-| Key: | emacs key     | keycap labels | modifier | Description                        |
-|------+---------------+---------------+----------+------------------------------------|
-| /m/  | <menu>        | ;             | control  | The C-; key translated to <menu>   |
-| /mm/ | <menu> <menu> | ;             | control  | Two consecutive <menu> key presses |
-| /s/  | super         | command       |          |                                    |
-| /h/  | hyper         | fn            |          |                                    |
-| /c/  | control       | control       |          |                                    |
-| /A/  | meta          | alt option    |          |                                    |
-|------+---------------+---------------+----------+------------------------------------|
-
-|--------------------+----------------+-----------------------------------------+-------------------|
-| Key Label/Shortcut | Default Action | Change To                               | Change Tool       |
-|--------------------+----------------+-----------------------------------------+-------------------|
-| caps lock          | no action      | f13 (when pressed alone)                | See Note 1 below. |
-|                    |                | control (when pressed with another key) |                   |
-| return             | return         | return (when pressed alone)             | Karabiner         |
-|                    |                | control (when pressed with another key) |                   |
-|--------------------+----------------+-----------------------------------------+-------------------|
-
-
-|------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------|
-| /    | <c11>       | <c10>      | <c11>       | <c10>      | <c11>       | <c10>      | <c11>       | <c10>      | <c11>       | <c10>      | <c11>       | <c10>      | <c11>       | <c10>      |
-|------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------|
-| Key: | *esc*       | *f1*       | *f2*        | *f3*       | *f4*        | *f5*       | *f6*        | *f7*       | *f8*        | *f9*       | *f10*       | *f11*      | *f12*       | /eject/    |
-|      |             |            |             |            |             |            |             |            |             |            |             |            |             |            |
-|------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------+-------------+------------|
-
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-| /    | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c17>             |
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-| Key: | *`*        | *1*        | *2*        | *3*        | *4*        | *5*        | *6*        | *7*        | *8**       | *9*        | *0*        | *-*        | *=*        | *del*             |
-| /s/  |            |            |            |            |            |            |            |            |            |            | [[elisp:(describe-function 'text-scale-set)][ClrTxtSize]] | [[elisp:(describe-function 'text-scale-decrease)][DecTqxtSize]] | [[elisp:(descrive-function 'text-scale-increase)][IncTxtSize]] |                   |
-| /m/  |            |            |            |            |            |            |            |            |            |            |            | [[elisp:(describe-function '2-windows-vertical-to-horizontal)][Hor2Vert]]   | Vert2Hor   |                   |
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-| /    | <c17>             | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      |
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-| Key: | *tab*             | *q*        | *w*        | *e*        | *r*        | *t*        | *y*        | *u*        | *i*        | *o*        | *p*        | *[*        | *]*        | *\\*       |
-| /h/  |                   |            |            |            | [[elisp:(describe-function 'replace-string)][ReplStr]]    |            |            | [[elisp:(describe-function 'upcase-word)][UpCase]]     | [[elisp:(describe-function 'capitalize-word)][InitCap]]    | [[elisp:(describe-function 'downcase-word)][DownCase]]   |            |            |            |            |
-| /s/  |                   | [[fill-paragraph][FilPar]]     |            | [[elisp:(describe-function 'kill-line)][DelLineFor]] | [[elisp:(describe-function 'backward-kill-line)][DelLineRev]] |            |            | [[elisp:(describe-function%20'forward-word)][WordFor]]    | [[elisp:(describe-function%20'backward-word)][WordRev]]    | [[elisp:(describe-function%20'scroll-down-command)][PageFor]]    | [[elisp:(describe-function%20'scroll-up-command)][PageRev]]    | [[elisp:(describe-function 'tbd)][reSeaRev]]   | [[elisp:(describe-function 'tbd)][reSeaFor]]   |            |
-| /m/  |                   |            |            | [[elisp:(describe-function 'eval-last-sexp)][EvalSexp]]   |            |            | [[elisp:(describe-function 'tbd)][BegOthBuf]]  |            |            |            |            | [[elisp:(describe-function 'tbd)][EndOthBuf]]  |            | [[elisp:(describe-function 'delete-horizontal-space)][DelWhtSpc]]  |
-| /mm/ |                   |            |            | [[elisp:(describe-function 'eval-expression)][EvalInMini]] | [[elisp:(describe-function 'eval-region)][EvalRegion]] |            |            |            |            | [[elisp:(describe-function 'occur)][Occurs]]     | [[elisp:(describe-function 'browse-url-at-point)][BrwsePoint]] |            |            |            |
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-| /    | <c20>                | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c20>                |
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-| Key: | /caps lock/          | *a*        | *s*        | *d*        | - *f* -    | *g*        | *h*        | - *j* -    | *k*        | *l*        | *;*        | *'*        | *return*             |
-| /h/  |                      |            |            |            |            | [[elisp:(describe-function%20'goto-position)][GotoPos]]    |            | [[elisp:(describe-function%20'beginning-of-buffer)][BegBuf]]     | [[elisp:(describe-function%20'end-of-buffer)][EndBuf]]     |            |            |            |                      |
-| /s/  |                      | [[elisp:(describe-function 'tbd)][DelWordFor]] | [[elisp:(describe-function 'tbd)][DelWordRev]] | [[elisp:(describe-function 'tbd)][DelCharFor]] | [[elisp:(describe-function 'tbd)][DelCharRev]] |            |            |            |            |            |            |            |                      |
-| /m/  |                      | C-c C-a    | [[elisp:(describe-function 'tbd)][JoinLin]]    |            | [[elisp:(describe-function 'helm-find-files)][OpenFile]]   | [[elisp:(describe-function 'tbd)][grep]]       | [[elisp:(describe-function 'tbd)][help]]       | [[elisp:(describe-function%20'next-error)][NextError]]  | [[elisp:(describe-function%20'compile)][Compile]]    | [[elisp:(describe-function 'other-buf)][OtherWin]]   | M-x        |            |                      |
-| /mm/ |                      | [[elisp:(describe-function 'save-some-buffers)][SaveAll]]    | [[elisp:(describe-function 'save-buffer)][SaveBuf]]    | [[elisp:(describe-function 'eval-defun)][EvalDefun]]  | [[(describe-function%20'browse-url-of-buffer)][BrowseFile]] | [[elisp:(describe-function 'prelude-google)][GSearch]]    |            | [[elisp:(describe-function 'ace-jump)][AceJump]]    | [[elisp:(describe-function 'ace-window)][AceWin]]     | [[elisp:(describe-function%20'prelude-smart-open-line-above)][SmartOpen]]  |            |            |                      |
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-| /    | <c27>                       | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c26>                      |
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-| Key: | /shift/                     | *z*        | *x*        | *c*        | *v*        | *b*        | *n*        | *m*        | *,*        | *.*        | */*        | /shift/                    |
-| /h/  |                             |            |            | [[elisp:(describe-function 'org-insert-link)][EditCell]]   |            | [[elisp:(describe-function%20'helm-mini)][SelectBuf]]  |            | [[elisp:(describe-function%20'move-text-down)][MovLinFor]]  | [[elisp:(describe-function%20'move-text-up)][MovLinRev]]  |            |            |                            |
-| /s/  |                             | [[elisp:(describe-function 'tbd)][undo]]       | [[elisp:(describe-function 'tbd)][cut]]        | [[elisp:(describe-function 'tbd)][copy]]       | [[elisp:(describe-function 'tbd)][paste]]      | [[elisp:(describe-function 'tbd)][redo]]       | [[elisp:(describe-function 'tbd)][pop]]        | [[elisp:(describe-function 'tbd)][OthPageFor]] | [[elisp:(describe-function 'tbd)][OthPageRev]] |            |            |                            |
-| /m/  |                             |            |            |            |            | [[elisp:(describe-function 'helm-mini)][SwitchBuf]]  | C-c        | [[elisp:(describe-function 'tbd)][Magit]]      | C-c C-c    | C-x C-x    |            |                            |
-| /mm/ |                             |            |            |            |            | [[elisp:(describe-function 'eval-buffer)][EvalBuf]]    |            |            |            |            |            |                            |
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-| /    | <c10>      | <c10>      | <c10>      | <c14>          | <c62>                                                          | <c13>         | <c10>      | <c10>      | <c10>      | <c10>      |
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-| Key: | /fn/       | /ctrl/     | /alt/      | /cmd/          | *space*                                                        | /cmd/         | /alt/      | *left*     | *up-dn*    | *right*    |
-| /h/  |            |            |            |                |                                                                |               |            | [[elisp:(describe-function%20'scroll-down-command)][PageRev]]    | Home/End   | [[elisp:(describe-function%20'scroll-up-command)][PageFor]]    |
-| /s/  |            |            |            |                | [[elisp:(describe-function 'tbd)][mark]]                                                           |               |            |            |            |            |
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-
-Shifted Keys
-
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-| /    | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c17>             |
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-| Key: | *~*        | *!*        | *@*        | *#*        | *$*        | *%*        | *^*        | *&*        | *\**       | *(*        | *)*        | *_*        | *+*        | *del*             |
-|------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-------------------|
-
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-| /    | <c17>             | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      |
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-| Key: | *TAB*             | *Q*        | *W*        | *E*        | *R*        | *T*        | *Y*        | *U*        | *I*        | *O*        | *P*        | *{*        | *]*        | *\vert{}*  |
-|------+-------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------|
-
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-| /    | <c20>                | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c20>                |
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-| Key: | /caps lock/          | *A*        | *S*        | *D*        | - *F* -    | *G*        | *H*        | - *J* -    | *K*        | *L*        | *:*        | *"*        | *RETURN*             |
-|------+----------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------|
-
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-| /    | <c27>                       | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c10>      | <c26>                      |
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-| Key: | /shift/                     | *Z*        | *X*        | *C*        | *V*        | *B*        | *N*        | *M*        | *<*        | *>*        | *?*        | /shift/                    |
-|------+-----------------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+----------------------------|
-
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-| /    | <c10>      | <c10>      | <c10>      | <c14>          | <c62>                                                          | <c13>         | <c10>      | <c10>      | <c10>      | <c10>      |
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-| Key: | /fn/       | /ctrl/     | /alt/      | /cmd/          | *SPACE*                                                        | /cmd/         | /alt/      | *LEFT*     | *UP-DN*    | *RIGHT*    |
-| /s/  |            |            |            |                | [[elisp:(describe-function 'tbd)][mark]]                                                           |               |            |            |            |            |
-|------+------------+------------+------------+----------------+----------------------------------------------------------------+---------------+------------+------------+------------+------------|
-
-Note 1: To map the caps lock key to f13/ctrl, perform the following steps:
-
-1) Use the System Preferences tool to select "no action" on caps lock.
-2) Use Seil to change the default key code value on caps lock to F13 (105).
-3) Use Karabiner to map f13 to generate f13 when typed alone or ctrl when
-   typed with another key.  This is accomplished by adding the following
-   content to ~/Library/Application Support/Karabiner/private.xml
-
-	<?xml version="1.0"?>
-	<root>
-	    <item>
-	        <name>Change F13 key</name>
-	        <item>
-	            <name>F13 to Control_L</name>
-	            <appendix>(+ When you type F13 only, send F13)</appendix>
-	            <identifier>remap.f132controlL_f13</identifier>
-	            <autogen>__KeyOverlaidModifier__ KeyCode::F13, KeyCode::CONTROL_L, KeyCode::F13</autogen>
-	        </item>
-	    </item>
-	</root>
-
-
-
 * Publishing
+* Modeling key bindings for a Mac keyboard
+
+Quick story on using Mac short keyboards
+
+[[file:mac-keyboard.org]]
