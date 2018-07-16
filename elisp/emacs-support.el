@@ -11,11 +11,10 @@
 (load custom-file 'noerror)
 
 ;; Initialize the ELPA (if supported).
-(if (fboundp 'package-initialize) (package-initialize))
+(if (fboundp 'package-initialize)
+    (package-initialize))
 
-;; Turn on global line number mode and uses spaces instead of tabs by
-;; default.
-(global-linum-mode 1)
+;; Use spaces instead of tabs by default.
 (setq-default indent-tabs-mode nil)
 
 ;; Discourage Emacs from using ellipsis too quickly and follow links
