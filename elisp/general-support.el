@@ -7,7 +7,7 @@
 (add-to-list 'load-path (expand-file-name "~/gd/emacs/dictionary"))
 
 ;; Put customizations in a dot file.
-(setq custom-file "~/gd/emacs/.emacs-custom.el")
+(setq custom-file "~/td/Pajato/members/pmr/emacs/.emacs-custom.el")
 (load custom-file 'noerror)
 
 ;; Initialize the ELPA (if supported).
@@ -23,10 +23,10 @@
       backup-by-copying-when-mismatch t
       display-time-day-and-date t
       eval-expression-print-level 10   ; default 4
-      eval-expression-print-length 50  ; default 12
+      eval-expression-print-length nil  ; default 12
       find-file-visit-truename t
       next-line-add-newlines nil
-      ;;visible-bell t
+      visible-bell t
       select-enable-clipboard t)
 
 
@@ -54,7 +54,6 @@
 ;; when not running on a Mac display.
 (menu-bar-showhide-tool-bar-menu-customize-disable)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-;;;(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (and (fboundp 'menu-bar-mode) (not (eq window-system 'ns)))
     (menu-bar-mode -1)
   (menu-bar-mode t))
