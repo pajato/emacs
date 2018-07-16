@@ -10,7 +10,7 @@
 (add-to-list 'load-path (expand-file-name "~/td/Pajato/members/pmr/emacs/elisp"))
 
 ;; Provide Prelude preferred support for Windows and Mac dependent features.
-;(require 'terminal-support)
+(require 'keybinding-support)
 ;(require 'emacs-support)
 ;(require 'environment-support)
 ;(require 'prelude-helm-everywhere)
@@ -25,7 +25,7 @@
 ;(require 'navigation-support)
 ;(require 'net-utils-support)
 ;(require 'outline-support)
-;(require 'org-support)
+(require 'org-support)
 ;(require 'shell-support)
 ;(require 'sgml-support)
 ;(require 'epresent)

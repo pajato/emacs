@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; See gd/org/mac-keyboard.org
+;;; See ../org/mac-keyboard.org
 
 ;; Use the very nice iy-go-to-char feature as seen in Emacs Rocks!
 ;;;;(require 'iy-go-to-char)
@@ -207,5 +207,5 @@
 (define-key global-map [M-S-up] 'beginning-of-buffer)
 (define-key global-map [M-S-down] 'end-of-buffer)
 
-(provide 'terminal-support)
-;;; terminal-support.el ends here
+(provide 'keybinding-support)
+;;; keybinding-support.el ends here
